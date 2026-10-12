@@ -19,6 +19,7 @@ jobs:
 
       # ── Stats cards (generated here, so they never hit public rate limits) ──
       - name: Stats card
+        id: stats
         uses: stats-organization/github-readme-stats-action@v2
         continue-on-error: true   # a hiccup keeps yesterday's card instead of an error card
         with:
@@ -28,9 +29,40 @@ jobs:
           path: profile/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Wait before retrying stats card
+        if: steps.stats.outcome == 'failure'
+        run: sleep 30
+
+      - name: Stats card (retry)
+        if: steps.stats.outcome == 'failure'
+        uses: stats-organization/github-readme-stats-action@v2
+        continue-on-error: true
+        with:
+          fail_on_error: true
+          card: stats
+          options: username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&rank_icon=github&hide_border=true&border_radius=14&bg_color=07020f&title_color=e0aaff&icon_color=c77dff&text_color=e6dcf5&ring_color=9d4edd&custom_title=Stats.exe
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Top languages card
+        id: langs
         uses: stats-organization/github-readme-stats-action@v2
         continue-on-error: true   # a hiccup keeps yesterday's card instead of an error card
+        with:
+          fail_on_error: true
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=donut&langs_count=6&hide_border=true&border_radius=14&bg_color=07020f&title_color=c77dff&text_color=e6dcf5&custom_title=Language%20Lab
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Wait before retrying top languages card
+        if: steps.langs.outcome == 'failure'
+        run: sleep 30
+
+      - name: Top languages card (retry)
+        if: steps.langs.outcome == 'failure'
+        uses: stats-organization/github-readme-stats-action@v2
+        continue-on-error: true
         with:
           fail_on_error: true
           card: top-langs
