@@ -62,20 +62,7 @@ An offline emergency map and AI assistant for all of Batangas, Philippines. It k
   </a>
 </p>
 
-<table>
-<tr>
-<td width="50%" valign="top"><b>Offline map</b><br/><sub>1,758 facilities: evacuation centers, hospitals, police, fire and rescue</sub></td>
-<td width="50%" valign="top"><b>Local AI, no cloud</b><br/><sub>Qwen 2.5 (3B) via Ollama. Code fact-checks every summary against the guide</sub></td>
-</tr>
-<tr>
-<td valign="top"><b>Speaks typo &amp; Taglish</b><br/><sub>“how do i stop bleding” and “saan ang pinakamalapit na ospital” both work</sub></td>
-<td valign="top"><b>Offline directions</b><br/><sub>A* routing on the device that steers around roads reported flooded</sub></td>
-</tr>
-<tr>
-<td valign="top"><b>Hub off? Still works</b><br/><sub>Phones keep a ~46 MB copy: map, guides, search and router</sub></td>
-<td valign="top"><b>Tested, not hoped</b><br/><sub>Python ↔ JS parity tests, offline end-to-end runs, a 220-question bank</sub></td>
-</tr>
-</table>
+<img src="assets/features.svg" width="100%" alt="OFFGRID features: Offline map (1,758 facilities across Batangas); Local AI, no cloud (Qwen 2.5 3B via Ollama, every summary fact-checked by code); Speaks typo and Taglish; Offline directions (A* routing that avoids flooded roads); Hub off, still works (phones keep a ~46 MB copy); Tested, not hoped (Python/JS parity tests, 220-question bank)"/>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-07020f?style=flat-square&logo=python&logoColor=c77dff" alt="Python"/>
@@ -136,12 +123,7 @@ An offline emergency map and AI assistant for all of Batangas, Philippines. It k
 <!-- ═══════════════════════════════  QUEST LOG  ═══════════════════════════════ -->
 ## Quest Log
 
-| Quest | Status |
-|:--|:--|
-| Take OFFGRID from demo to real-world ready for Batangas | `▰▰▰▰▰▰▰▰▱▱` polishing |
-| Ship Pabrews Cafe's QR ordering system | `▰▰▰▱▱▱▱▱▱▱` building |
-| Java roadmap: `basics ✔ → loops ✔ → OOP ◉ → DSA ○` | `▰▰▰▰▰▱▱▱▱▱` levelling up |
-| Become a Full-Stack & AI Engineer | `▰▰▱▱▱▱▱▱▱▱` the long game |
+<img src="assets/quests.svg" width="100%" alt="Quest log: OFFGRID demo to real-world ready for Batangas, 80%, polishing; Ship Pabrews Cafe's QR ordering system, 30%, building; Java roadmap basics, loops, OOP, DSA, 50%, levelling up; Become a Full-Stack and AI Engineer, 20%, the long game"/>
 
 <details>
 <summary><b>Click for 5 fun facts from my repos</b></summary>

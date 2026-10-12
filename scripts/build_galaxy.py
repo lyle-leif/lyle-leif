@@ -185,8 +185,10 @@ def footer():
     return scene(w, h, uid, 11, 70, body, [(60, 8, 380, 110, 8, 2.5)])
 
 
-assets = Path(__file__).resolve().parent.parent / "assets"
-assets.mkdir(exist_ok=True)
-for name, svg in (("header.svg", header()), ("footer.svg", footer())):
-    (assets / name).write_text(svg, encoding="utf-8")
-    print(f"wrote {assets / name}  ({len(svg) // 1024} KB)")
+ASSETS = Path(__file__).resolve().parent.parent / "assets"
+
+if __name__ == "__main__":
+    ASSETS.mkdir(exist_ok=True)
+    for name, svg in (("header.svg", header()), ("footer.svg", footer())):
+        (ASSETS / name).write_text(svg, encoding="utf-8")
+        print(f"wrote {ASSETS / name}  ({len(svg) // 1024} KB)")

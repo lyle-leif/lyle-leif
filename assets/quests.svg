@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="280" viewBox="0 0 900 280" role="img" aria-label="Quest log">
+  <defs>
+    <linearGradient id="qbsky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0a0318"/><stop offset="1" stop-color="#07020f"/>
+    </linearGradient>
+    <linearGradient id="qbtitle" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#e0aaff"/>
+      <stop offset="1" stop-color="#c77dff"/>
+    </linearGradient>
+    <filter id="qbcloud" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="38"/></filter>
+    <filter id="qbglow" x="-30%" y="-60%" width="160%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feFlood flood-color="#7b2cbf" flood-opacity="0.9"/><feComposite in2="b" operator="in" result="g"/>
+      <feMerge><feMergeNode in="g"/><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="qbspark" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur stdDeviation="1.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <radialGradient id="qbplanet" cx="0.35" cy="0.3" r="0.8">
+      <stop offset="0" stop-color="#c77dff"/><stop offset="0.6" stop-color="#5a189a"/><stop offset="1" stop-color="#1a0633"/>
+    </radialGradient>
+    <clipPath id="qbcard"><rect width="900" height="280" rx="18"/></clipPath>
+  </defs>
+  <g clip-path="url(#qbcard)">
+    <rect width="900" height="280" fill="url(#qbsky)"/>
+    <g opacity="0.45"><circle cx="512.7" cy="176.0" r="0.9" fill="#e0aaff" opacity="0.97"><animate attributeName="opacity" values="0.97;0.30;0.97" dur="6.1s" begin="1.1s" repeatCount="indefinite"/></circle><g transform="translate(585.3 171.9)" opacity="0.88" filter="url(#qbspark)"><animate attributeName="opacity" values="0.88;0.39;0.88" dur="4.0s" begin="5.7s" repeatCount="indefinite"/><path d="M0 -6.7 Q0.9 -0.9 6.7 0 Q0.9 0.9 0 6.7 Q-0.9 0.9 -6.7 0 Q-0.9 -0.9 0 -6.7Z" fill="#ffffff"/></g><circle cx="571.0" cy="86.0" r="0.9" fill="#c77dff" opacity="0.76"><animate attributeName="opacity" values="0.76;0.25;0.76" dur="4.7s" begin="4.4s" repeatCount="indefinite"/></circle><circle cx="384.1" cy="234.3" r="1.0" fill="#c77dff" opacity="0.81"><animate attributeName="opacity" values="0.81;0.33;0.81" dur="5.9s" begin="1.9s" repeatCount="indefinite"/></circle><circle cx="795.8" cy="274.7" r="0.6" fill="#ffffff" opacity="0.83"><animate attributeName="opacity" values="0.83;0.14;0.83" dur="3.1s" begin="1.6s" repeatCount="indefinite"/></circle><circle cx="9.7" cy="146.7" r="0.9" fill="#c77dff" opacity="0.80"><animate attributeName="opacity" values="0.80;0.22;0.80" dur="2.5s" begin="0.2s" repeatCount="indefinite"/></circle><g transform="translate(782.5 207.3)" opacity="0.77" filter="url(#qbspark)"><animate attributeName="opacity" values="0.77;0.12;0.77" dur="5.6s" begin="0.0s" repeatCount="indefinite"/><path d="M0 -6.7 Q0.9 -0.9 6.7 0 Q0.9 0.9 0 6.7 Q-0.9 0.9 -6.7 0 Q-0.9 -0.9 0 -6.7Z" fill="#ffffff"/></g><circle cx="369.7" cy="98.7" r="0.8" fill="#ff5ccf" opacity="0.86"><animate attributeName="opacity" values="0.86;0.30;0.86" dur="4.1s" begin="2.1s" repeatCount="indefinite"/></circle><circle cx="484.8" cy="217.6" r="0.9" fill="#e0aaff" opacity="0.87"><animate attributeName="opacity" values="0.87;0.12;0.87" dur="3.7s" begin="4.7s" repeatCount="indefinite"/></circle><circle cx="103.0" cy="241.4" r="0.5" fill="#c77dff" opacity="0.93"><animate attributeName="opacity" values="0.93;0.29;0.93" dur="5.9s" begin="5.1s" repeatCount="indefinite"/></circle><g transform="translate(774.0 251.5)" opacity="0.97" filter="url(#qbspark)"><animate attributeName="opacity" values="0.97;0.31;0.97" dur="6.2s" begin="1.7s" repeatCount="indefinite"/><path d="M0 -5.5 Q0.9 -0.9 5.5 0 Q0.9 0.9 0 5.5 Q-0.9 0.9 -5.5 0 Q-0.9 -0.9 0 -5.5Z" fill="#ffffff"/></g><circle cx="253.5" cy="261.5" r="1.1" fill="#ffffff" opacity="0.91"><animate attributeName="opacity" values="0.91;0.24;0.91" dur="5.4s" begin="2.3s" repeatCount="indefinite"/></circle><circle cx="681.1" cy="90.4" r="1.0" fill="#ffffff" opacity="0.80"><animate attributeName="opacity" values="0.80;0.13;0.80" dur="5.2s" begin="3.7s" repeatCount="indefinite"/></circle><circle cx="259.3" cy="173.6" r="1.0" fill="#e0aaff" opacity="0.95"><animate attributeName="opacity" values="0.95;0.23;0.95" dur="6.2s" begin="5.2s" repeatCount="indefinite"/></circle><g transform="translate(673.4 163.6)" opacity="0.91" filter="url(#qbspark)"><animate attributeName="opacity" values="0.91;0.36;0.91" dur="5.2s" begin="1.4s" repeatCount="indefinite"/><path d="M0 -6.7 Q0.9 -0.9 6.7 0 Q0.9 0.9 0 6.7 Q-0.9 0.9 -6.7 0 Q-0.9 -0.9 0 -6.7Z" fill="#ffffff"/></g><circle cx="86.2" cy="77.5" r="0.6" fill="#7aa2ff" opacity="0.97"><animate attributeName="opacity" values="0.97;0.14;0.97" dur="2.9s" begin="3.7s" repeatCount="indefinite"/></circle><circle cx="61.5" cy="188.9" r="0.5" fill="#7aa2ff" opacity="0.88"><animate attributeName="opacity" values="0.88;0.23;0.88" dur="3.7s" begin="5.2s" repeatCount="indefinite"/></circle><circle cx="142.9" cy="10.3" r="0.6" fill="#ffffff" opacity="0.95"><animate attributeName="opacity" values="0.95;0.24;0.95" dur="4.6s" begin="1.3s" repeatCount="indefinite"/></circle><circle cx="500.4" cy="187.8" r="1.0" fill="#ffffff" opacity="0.97"><animate attributeName="opacity" values="0.97;0.13;0.97" dur="4.2s" begin="1.9s" repeatCount="indefinite"/></circle><circle cx="31.7" cy="186.7" r="0.5" fill="#ffffff" opacity="0.82"><animate attributeName="opacity" values="0.82;0.25;0.82" dur="3.5s" begin="3.1s" repeatCount="indefinite"/></circle><circle cx="645.4" cy="30.6" r="1.1" fill="#e0aaff" opacity="0.82"><animate attributeName="opacity" values="0.82;0.33;0.82" dur="5.9s" begin="3.2s" repeatCount="indefinite"/></circle><circle cx="751.4" cy="74.3" r="0.7" fill="#e0aaff" opacity="0.78"><animate attributeName="opacity" values="0.78;0.26;0.78" dur="4.2s" begin="2.8s" repeatCount="indefinite"/></circle><circle cx="292.8" cy="204.7" r="0.5" fill="#ffffff" opacity="0.79"><animate attributeName="opacity" values="0.79;0.11;0.79" dur="2.8s" begin="4.4s" repeatCount="indefinite"/></circle><circle cx="215.8" cy="171.1" r="0.5" fill="#e0aaff" opacity="0.85"><animate attributeName="opacity" values="0.85;0.23;0.85" dur="3.3s" begin="4.3s" repeatCount="indefinite"/></circle><circle cx="204.2" cy="15.5" r="0.7" fill="#e0aaff" opacity="0.84"><animate attributeName="opacity" values="0.84;0.39;0.84" dur="2.5s" begin="5.8s" repeatCount="indefinite"/></circle><circle cx="579.3" cy="264.2" r="1.0" fill="#ffffff" opacity="0.76"><animate attributeName="opacity" values="0.76;0.34;0.76" dur="3.1s" begin="4.8s" repeatCount="indefinite"/></circle><circle cx="464.3" cy="218.7" r="1.1" fill="#7aa2ff" opacity="0.77"><animate attributeName="opacity" values="0.77;0.36;0.77" dur="4.8s" begin="1.1s" repeatCount="indefinite"/></circle><circle cx="181.9" cy="244.2" r="1.1" fill="#ffffff" opacity="0.85"><animate attributeName="opacity" values="0.85;0.18;0.85" dur="3.4s" begin="2.6s" repeatCount="indefinite"/></circle><circle cx="528.1" cy="196.3" r="1.1" fill="#e0aaff" opacity="0.85"><animate attributeName="opacity" values="0.85;0.23;0.85" dur="2.4s" begin="4.6s" repeatCount="indefinite"/></circle><circle cx="145.2" cy="63.4" r="0.5" fill="#ffffff" opacity="0.85"><animate attributeName="opacity" values="0.85;0.15;0.85" dur="4.1s" begin="1.1s" repeatCount="indefinite"/></circle><circle cx="382.6" cy="210.2" r="0.6" fill="#ffffff" opacity="0.85"><animate attributeName="opacity" values="0.85;0.38;0.85" dur="2.7s" begin="5.5s" repeatCount="indefinite"/></circle><circle cx="450.6" cy="220.1" r="1.1" fill="#ffffff" opacity="0.88"><animate attributeName="opacity" values="0.88;0.37;0.88" dur="3.7s" begin="3.5s" repeatCount="indefinite"/></circle><g transform="translate(709.1 274.4)" opacity="0.83" filter="url(#qbspark)"><animate attributeName="opacity" values="0.83;0.25;0.83" dur="4.4s" begin="3.3s" repeatCount="indefinite"/><path d="M0 -5.5 Q0.9 -0.9 5.5 0 Q0.9 0.9 0 5.5 Q-0.9 0.9 -5.5 0 Q-0.9 -0.9 0 -5.5Z" fill="#ffffff"/></g><circle cx="256.5" cy="128.6" r="0.8" fill="#e0aaff" opacity="0.83"><animate attributeName="opacity" values="0.83;0.18;0.83" dur="5.9s" begin="1.8s" repeatCount="indefinite"/></circle><circle cx="741.7" cy="256.7" r="0.9" fill="#ffffff" opacity="0.76"><animate attributeName="opacity" values="0.76;0.19;0.76" dur="6.3s" begin="1.5s" repeatCount="indefinite"/></circle><circle cx="391.2" cy="140.4" r="1.0" fill="#ffffff" opacity="0.80"><animate attributeName="opacity" values="0.80;0.31;0.80" dur="3.9s" begin="1.5s" repeatCount="indefinite"/></circle><circle cx="652.1" cy="174.8" r="1.0" fill="#ff5ccf" opacity="0.76"><animate attributeName="opacity" values="0.76;0.18;0.76" dur="5.4s" begin="1.1s" repeatCount="indefinite"/></circle><circle cx="463.3" cy="60.0" r="0.9" fill="#ffffff" opacity="0.88"><animate attributeName="opacity" values="0.88;0.35;0.88" dur="3.4s" begin="0.6s" repeatCount="indefinite"/></circle><circle cx="747.9" cy="184.8" r="0.9" fill="#ffffff" opacity="0.77"><animate attributeName="opacity" values="0.77;0.17;0.77" dur="2.1s" begin="3.3s" repeatCount="indefinite"/></circle><circle cx="662.6" cy="186.4" r="0.9" fill="#e0aaff" opacity="0.77"><animate attributeName="opacity" values="0.77;0.40;0.77" dur="3.9s" begin="2.0s" repeatCount="indefinite"/></circle><circle cx="164.0" cy="265.4" r="0.9" fill="#ffffff" opacity="0.87"><animate attributeName="opacity" values="0.87;0.32;0.87" dur="5.6s" begin="2.1s" repeatCount="indefinite"/></circle><circle cx="673.1" cy="82.0" r="0.5" fill="#ffffff" opacity="0.99"><animate attributeName="opacity" values="0.99;0.15;0.99" dur="3.9s" begin="4.4s" repeatCount="indefinite"/></circle><circle cx="767.4" cy="53.8" r="0.7" fill="#e0aaff" opacity="0.85"><animate attributeName="opacity" values="0.85;0.30;0.85" dur="2.7s" begin="3.8s" repeatCount="indefinite"/></circle><g transform="translate(261.8 48.9)" opacity="0.87" filter="url(#qbspark)"><animate attributeName="opacity" values="0.87;0.30;0.87" dur="2.6s" begin="3.7s" repeatCount="indefinite"/><path d="M0 -6.7 Q0.9 -0.9 6.7 0 Q0.9 0.9 0 6.7 Q-0.9 0.9 -6.7 0 Q-0.9 -0.9 0 -6.7Z" fill="#ffffff"/></g><g transform="translate(548.0 47.1)" opacity="0.83" filter="url(#qbspark)"><animate attributeName="opacity" values="0.83;0.39;0.83" dur="5.4s" begin="2.1s" repeatCount="indefinite"/><path d="M0 -6.7 Q0.9 -0.9 6.7 0 Q0.9 0.9 0 6.7 Q-0.9 0.9 -6.7 0 Q-0.9 -0.9 0 -6.7Z" fill="#ffffff"/></g></g>
+    <g font-family="'Segoe UI','Helvetica Neue',Helvetica,Arial,sans-serif">
+    <linearGradient id="qbar" gradientUnits="userSpaceOnUse" x1="470" y1="0" x2="700" y2="0">
+      <stop offset="0" stop-color="#7b2cbf"/><stop offset="0.6" stop-color="#c77dff"/><stop offset="1" stop-color="#ff5ccf"/>
+    </linearGradient>
+    <filter id="qglow" x="-10%" y="-150%" width="120%" height="400%">
+      <feGaussianBlur stdDeviation="2.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <g font-size="11" font-weight="700" letter-spacing="2" fill="#8c7aa9">
+      <text x="28" y="40">QUEST</text>
+      <text x="470" y="40">PROGRESS</text>
+      <text x="872" y="40" text-anchor="end">STATUS</text>
+    </g>
+    <line x1="28" y1="54" x2="872" y2="54" stroke="#c77dff" stroke-opacity="0.3"/>
+    <g>
+      <text x="28" y="92" font-size="13" fill="#ff5ccf">◆</text>
+      <text x="48" y="92" font-size="15" fill="#e6dcf5">OFFGRID: demo → real-world ready for Batangas</text>
+      <rect x="470" y="82" width="230" height="10" rx="5" fill="#3c096c" fill-opacity="0.7"/>
+      <clipPath id="qfill0"><rect x="470" y="82" width="0" height="10" rx="5">
+        <animate attributeName="width" from="0" to="184.0" begin="0.50s" dur="1.4s" fill="freeze"
+          calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/></rect></clipPath>
+      <g clip-path="url(#qfill0)">
+        <rect x="470" y="82" width="230" height="10" fill="url(#qbar)" filter="url(#qglow)"/>
+        <rect x="430" y="82" width="34" height="10" fill="#ffffff" fill-opacity="0.35">
+          <animate attributeName="x" values="430;664.0" dur="2.6s" begin="2.10s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+      <text x="714" y="92" font-size="13" font-weight="700" fill="#c77dff">80%</text>
+      <text x="872" y="92" text-anchor="end" font-size="13" fill="#e0aaff" fill-opacity="0.75">polishing</text>
+      <line x1="28" y1="117" x2="872" y2="117" stroke="#7b2cbf" stroke-opacity="0.22"/>
+    </g>
+    <g>
+      <text x="28" y="142" font-size="13" fill="#ff5ccf">◆</text>
+      <text x="48" y="142" font-size="15" fill="#e6dcf5">Ship Pabrews Cafe&#x27;s QR ordering system</text>
+      <rect x="470" y="132" width="230" height="10" rx="5" fill="#3c096c" fill-opacity="0.7"/>
+      <clipPath id="qfill1"><rect x="470" y="132" width="0" height="10" rx="5">
+        <animate attributeName="width" from="0" to="69.0" begin="0.75s" dur="1.4s" fill="freeze"
+          calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/></rect></clipPath>
+      <g clip-path="url(#qfill1)">
+        <rect x="470" y="132" width="230" height="10" fill="url(#qbar)" filter="url(#qglow)"/>
+        <rect x="430" y="132" width="34" height="10" fill="#ffffff" fill-opacity="0.35">
+          <animate attributeName="x" values="430;549.0" dur="2.6s" begin="2.35s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+      <text x="714" y="142" font-size="13" font-weight="700" fill="#c77dff">30%</text>
+      <text x="872" y="142" text-anchor="end" font-size="13" fill="#e0aaff" fill-opacity="0.75">building</text>
+      <line x1="28" y1="167" x2="872" y2="167" stroke="#7b2cbf" stroke-opacity="0.22"/>
+    </g>
+    <g>
+      <text x="28" y="192" font-size="13" fill="#ff5ccf">◆</text>
+      <text x="48" y="192" font-size="15" fill="#e6dcf5">Java roadmap: basics ✔ → loops ✔ → OOP ◉ → DSA ○</text>
+      <rect x="470" y="182" width="230" height="10" rx="5" fill="#3c096c" fill-opacity="0.7"/>
+      <clipPath id="qfill2"><rect x="470" y="182" width="0" height="10" rx="5">
+        <animate attributeName="width" from="0" to="115.0" begin="1.00s" dur="1.4s" fill="freeze"
+          calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/></rect></clipPath>
+      <g clip-path="url(#qfill2)">
+        <rect x="470" y="182" width="230" height="10" fill="url(#qbar)" filter="url(#qglow)"/>
+        <rect x="430" y="182" width="34" height="10" fill="#ffffff" fill-opacity="0.35">
+          <animate attributeName="x" values="430;595.0" dur="2.6s" begin="2.60s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+      <text x="714" y="192" font-size="13" font-weight="700" fill="#c77dff">50%</text>
+      <text x="872" y="192" text-anchor="end" font-size="13" fill="#e0aaff" fill-opacity="0.75">levelling up</text>
+      <line x1="28" y1="217" x2="872" y2="217" stroke="#7b2cbf" stroke-opacity="0.22"/>
+    </g>
+    <g>
+      <text x="28" y="242" font-size="13" fill="#ff5ccf">◆</text>
+      <text x="48" y="242" font-size="15" fill="#e6dcf5">Become a Full-Stack &amp; AI Engineer</text>
+      <rect x="470" y="232" width="230" height="10" rx="5" fill="#3c096c" fill-opacity="0.7"/>
+      <clipPath id="qfill3"><rect x="470" y="232" width="0" height="10" rx="5">
+        <animate attributeName="width" from="0" to="46.0" begin="1.25s" dur="1.4s" fill="freeze"
+          calcMode="spline" keyTimes="0;1" keySplines="0.2 0.8 0.2 1"/></rect></clipPath>
+      <g clip-path="url(#qfill3)">
+        <rect x="470" y="232" width="230" height="10" fill="url(#qbar)" filter="url(#qglow)"/>
+        <rect x="430" y="232" width="34" height="10" fill="#ffffff" fill-opacity="0.35">
+          <animate attributeName="x" values="430;526.0" dur="2.6s" begin="2.85s" repeatCount="indefinite"/>
+        </rect>
+      </g>
+      <text x="714" y="242" font-size="13" font-weight="700" fill="#c77dff">20%</text>
+      <text x="872" y="242" text-anchor="end" font-size="13" fill="#e0aaff" fill-opacity="0.75">the long game</text>
+      
+    </g></g>
+  </g>
+  <rect x="0.75" y="0.75" width="898.5" height="278.5" rx="17.5" fill="none" stroke="#7b2cbf" stroke-opacity="0.55" stroke-width="1.5"/>
+</svg>
