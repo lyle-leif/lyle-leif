@@ -26,29 +26,7 @@
 <!-- ═══════════════════════════════  ABOUT  ═══════════════════════════════ -->
 ## `about.me`
 
-<table>
-<tr>
-<td width="64%" valign="top">
-
-```ts
-const lyle = {
-  name:       "Lyle Daniel",
-  school:     "Batangas State University — The NEU",
-  studying:   "Computer Science",
-  aimingFor:  "Full-Stack & AI Engineer",
-  building:   "OFFGRID — an offline AI emergency map",
-  learning:   ["Java OOP", "Data Structures", "FastAPI", "local LLMs"],
-  speaks:     ["Java", "Python", "C++", "React", "JavaScript"],
-  approach:   "understand it → test it → improve it, step by step",
-} as const;
-```
-
-</td>
-<td width="36%" align="center" valign="middle">
-  <img src="assets/orbit.svg" width="250" alt="orbit"/>
-</td>
-</tr>
-</table>
+<img src="assets/about.svg" width="100%" alt="about.me — name: Lyle Daniel; school: Batangas State University — The NEU; studying: Computer Science; aimingFor: Full-Stack &amp; AI Engineer; building: OFFGRID — an offline AI emergency map; learning: [Java OOP, Data Structures, FastAPI, local LLMs]; speaks: [Java, Python, C++, React, JavaScript]; approach: understand it → test it → improve it, step by step"/>
 
 <!-- ═══════════════════════════════  FEATURED  ═══════════════════════════════ -->
 ## Featured Build — [OFFGRID](https://github.com/lyle-leif/OFFGRID)

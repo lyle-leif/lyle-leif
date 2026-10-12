@@ -28,7 +28,20 @@ QUESTS = [
     ("Become a Full-Stack & AI Engineer", 20, "the long game"),
 ]
 
+# ── about.me code card: (key, string or list of strings) ─────────────
+ABOUT = [
+    ("name", "Lyle Daniel"),
+    ("school", "Batangas State University — The NEU"),
+    ("studying", "Computer Science"),
+    ("aimingFor", "Full-Stack & AI Engineer"),
+    ("building", "OFFGRID — an offline AI emergency map"),
+    ("learning", ["Java OOP", "Data Structures", "FastAPI", "local LLMs"]),
+    ("speaks", ["Java", "Python", "C++", "React", "JavaScript"]),
+    ("approach", "understand it → test it → improve it, step by step"),
+]
+
 W = 900
+MONO = "'Fira Code','JetBrains Mono','Cascadia Code',Consolas,Menlo,monospace"
 PANEL = "#120a24"
 DIM = "#8c7aa9"
 
@@ -141,7 +154,73 @@ def quests():
         'role="img">', 'role="img" aria-label="Quest log">', 1)
 
 
+def about():
+    pad, ed_w, bar_h, line_h, fs = 16, 590, 34, 21, 12.5
+    code_top = pad + bar_h + 28
+    # Tokens are (text, colour) or (text, colour, column). A column pins the token to a
+    # character position, so indentation and alignment don't depend on preserved spaces.
+    lines = [[("const", "pink"), (" lyle ", "text"), ("= {", "dim")]]
+    for key, value in ABOUT:
+        toks = [(key, "lav", 2), (":", "dim")]
+        if isinstance(value, list):
+            toks.append(("[", "dim", 14))
+            for j, item in enumerate(value):
+                toks += [(f'"{item}"', "star")] + ([(", ", "dim")] if j < len(value) - 1 else [])
+            toks.append(("]", "dim"))
+        else:
+            toks.append((f'"{value}"', "star", 14))
+        lines.append(toks + [(",", "dim")])
+    lines.append([("}", "dim"), (" as const", "pink"), (";", "dim")])
+
+    colors = {"pink": C["pink"], "lav": C["lav"], "star": C["star"], "text": C["text"], "dim": DIM}
+    ed_h = code_top + (len(lines) - 1) * line_h + 22 - pad
+    h = ed_h + 2 * pad
+    char_w = fs * 0.6
+    code_x = pad + 46
+
+    def tspan(text, colour, column=None):
+        x = f' x="{code_x + column * char_w:.1f}"' if column is not None else ""
+        return f'<tspan{x} fill="{colors[colour]}">{escape(text)}</tspan>'
+
+    code = []
+    for i, toks in enumerate(lines):
+        y = code_top + i * line_h
+        spans = "".join(tspan(*tok) for tok in toks)
+        code.append(
+            f'<g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="{0.3 + i * 0.12:.2f}s" dur="0.4s" fill="freeze"/>'
+            f'<text x="{pad + 34}" y="{y}" text-anchor="end" fill="{DIM}" fill-opacity="0.6">{i + 1}</text>'
+            f'<text x="{code_x}" y="{y}">{spans}</text></g>'
+        )
+    last = lines[-1]
+    cursor_x = code_x + sum(len(tok[0]) for tok in last) * char_w + 3
+    cursor_y = code_top + (len(lines) - 1) * line_h
+    cursor_t = 0.3 + len(lines) * 0.12
+
+    editor = f'''
+    <rect x="{pad}" y="{pad}" width="{ed_w}" height="{ed_h}" rx="12" fill="{PANEL}" fill-opacity="0.9" stroke="{C["violet"]}" stroke-opacity="0.6"/>
+    <path d="M{pad + 12} {pad} h{ed_w - 24} a12 12 0 0 1 12 12 v{bar_h - 12} h-{ed_w} v-{bar_h - 12} a12 12 0 0 1 12 -12z" fill="#1a0d33"/>
+    <circle cx="{pad + 18}" cy="{pad + 17}" r="5" fill="#ff5f57"/>
+    <circle cx="{pad + 34}" cy="{pad + 17}" r="5" fill="#febc2e"/>
+    <circle cx="{pad + 50}" cy="{pad + 17}" r="5" fill="#28c840"/>
+    <text x="{pad + 76}" y="{pad + 21}" font-family="{MONO}" font-size="12" fill="{C["star"]}">about.ts</text>
+    <line x1="{pad + 70}" y1="{pad + bar_h - 1}" x2="{pad + 140}" y2="{pad + bar_h - 1}" stroke="{C["lav"]}" stroke-width="2"/>
+    <g font-family="{MONO}" font-size="{fs}" xml:space="preserve">{"".join(code)}</g>
+    <rect x="{cursor_x:.1f}" y="{cursor_y - fs + 1}" width="7" height="{fs + 3}" fill="{C["lav"]}" opacity="0">
+      <animate attributeName="opacity" values="0;1;1;0;0" keyTimes="0;0.01;0.5;0.51;1" dur="1s" begin="{cursor_t:.2f}s" repeatCount="indefinite"/>
+    </rect>'''
+
+    # The spiral galaxy from assets/orbit.svg, centred in the right-hand column.
+    orbit_src = (ASSETS / "orbit.svg").read_text(encoding="utf-8")
+    orbit_body = orbit_src[orbit_src.index(">") + 1: orbit_src.rindex("</svg>")]
+    col_x, col_w, size = pad + ed_w, W - pad - (pad + ed_w), 250
+    galaxy = (f'<svg x="{col_x + (col_w - size) / 2:.1f}" y="{(h - size) / 2:.1f}" width="{size}" height="{size}" '
+              f'viewBox="0 0 320 320">{orbit_body}</svg>')
+
+    return frame(W, h, "ab", 45, 40, editor + galaxy, 0.5).replace(
+        'role="img">', 'role="img" aria-label="about.me">', 1)
+
+
 if __name__ == "__main__":
-    for name, svg in (("features.svg", features()), ("quests.svg", quests())):
+    for name, svg in (("features.svg", features()), ("quests.svg", quests()), ("about.svg", about())):
         (ASSETS / name).write_text(svg, encoding="utf-8")
         print(f"wrote {ASSETS / name}  ({len(svg) // 1024} KB)")
