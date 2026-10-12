@@ -9,7 +9,7 @@
 
 <br/>
 
-<img src="https://komarev.com/ghpvc/?username=lyle-leif&style=for-the-badge&color=ff2e97&label=PROFILE+VIEWS" alt="profile views"/>
+<img src="https://hits.sh/github.com/lyle-leif.svg?style=for-the-badge&label=PROFILE%20VIEWS&color=ff2e97&labelColor=0b0f17" alt="profile views"/>
 <img src="https://img.shields.io/github/followers/lyle-leif?style=for-the-badge&logo=github&logoColor=white&label=Followers&labelColor=0b0f17&color=7928ca" alt="followers"/>
 <img src="https://img.shields.io/github/stars/lyle-leif?style=for-the-badge&logo=starship&logoColor=white&label=Stars&labelColor=0b0f17&color=00b8c4" alt="stars"/>
 
