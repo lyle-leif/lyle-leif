@@ -14,6 +14,13 @@ from html import escape
 NAME = "Lyle Daniel"
 TAGLINE = "CS Student · Aspiring Full-Stack and AI Engineer"
 FOOTER = "thanks for stopping by · stay offline-ready"
+TYPING = [
+    "Hey, I'm Lyle",
+    "CS Student @ Batangas State University",
+    "Aspiring Full-Stack & AI Engineer",
+    "Building AI that works without internet",
+    "Java · Python · C++ · JavaScript",
+]
 
 # ── Galaxy palette ────────────────────────────────────────────────────
 C = {
@@ -185,10 +192,57 @@ def footer():
     return scene(w, h, uid, 11, 70, body, [(60, 8, 380, 110, 8, 2.5)])
 
 
+def typing():
+    """Types each TYPING line, pauses, deletes it, and loops forever."""
+    w, h, fs = 640, 50, 22
+    char_w = fs * 0.6                      # monospace advance width
+    type_s, del_s, hold_s, gap_s = 0.07, 0.035, 1.6, 0.35
+    windows, t = [], 0.0
+    for line in TYPING:
+        n = len(line)
+        windows.append((t, n))
+        t += n * type_s + hold_s + n * del_s + gap_s
+    cycle = t
+
+    def anim(attr, start, n, base, step, idle):
+        # One discrete keyframe per character typed, then per character deleted;
+        # `idle` is the value outside this line's window.
+        times, vals = [0.0], [idle]
+        for k in range(n + 1):
+            times.append(start + k * type_s); vals.append(base + k * step)
+        del_start = start + n * type_s + hold_s
+        for k in range(1, n + 1):
+            times.append(del_start + k * del_s); vals.append(base + (n - k) * step)
+        times.append(del_start + n * del_s + 0.001); vals.append(idle)
+        times.append(cycle); vals.append(idle)
+        kt = ";".join(f"{x / cycle:.5f}" for x in times)
+        vs = ";".join(f"{v:.1f}" for v in vals)
+        return (f'<animate attributeName="{attr}" values="{vs}" keyTimes="{kt}" calcMode="discrete" '
+                f'dur="{cycle:.2f}s" repeatCount="indefinite"/>')
+
+    parts = []
+    for i, (start, n) in enumerate(windows):
+        x0 = (w - n * char_w) / 2
+        line = TYPING[i]
+        parts.append(
+            f'<clipPath id="ty{i}"><rect x="{x0:.1f}" y="0" height="{h}" width="0">{anim("width", start, n, 0, char_w, 0)}</rect></clipPath>'
+            f'<text x="{x0:.1f}" y="{h / 2 + fs * 0.35:.1f}" clip-path="url(#ty{i})">{escape(line)}</text>'
+            # Cursor rides along the end of the typed text while this line is active.
+            f'<rect y="{h / 2 - fs * 0.6:.1f}" width="2.5" height="{fs * 1.2:.1f}" x="-10" fill="{C["lav"]}">'
+            f'{anim("x", start, n, x0, char_w, -10)}</rect>'
+        )
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" role="img" aria-label="{escape(" · ".join(TYPING))}">
+  <g font-family="'Fira Code','JetBrains Mono','Cascadia Code',Consolas,Menlo,monospace" font-size="{fs}" font-weight="600" fill="{C["lav"]}">
+    {"".join(parts)}
+  </g>
+</svg>
+'''
+
+
 ASSETS = Path(__file__).resolve().parent.parent / "assets"
 
 if __name__ == "__main__":
     ASSETS.mkdir(exist_ok=True)
-    for name, svg in (("header.svg", header()), ("footer.svg", footer())):
+    for name, svg in (("header.svg", header()), ("footer.svg", footer()), ("typing.svg", typing())):
         (ASSETS / name).write_text(svg, encoding="utf-8")
         print(f"wrote {ASSETS / name}  ({len(svg) // 1024} KB)")

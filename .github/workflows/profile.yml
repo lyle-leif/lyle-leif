@@ -11,9 +11,15 @@ on:
 permissions:
   contents: write
 
+# Never let two refreshes run at once (schedule + push + manual), or their pushes collide.
+concurrency:
+  group: profile-cards
+  cancel-in-progress: false
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04       # pinned: ubuntu-latest moves to Ubuntu 26 on 2026-10-19
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v5
 
@@ -81,6 +87,7 @@ jobs:
       # ── Contribution snake (dark + light) ──
       - name: Snake
         uses: Platane/snk@v3
+        continue-on-error: true   # a failed snake shouldn't block the other cards
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
@@ -93,4 +100,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add profile/
           git commit -m "chore: refresh profile cards" || exit 0
-          git push
+          # Rebase onto anything pushed meanwhile (e.g. a README edit), retrying once.
+          git pull --rebase origin main && git push || { sleep 10; git pull --rebase origin main && git push; }

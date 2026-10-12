@@ -4,7 +4,7 @@
 <div align="center">
 
 <a href="https://github.com/lyle-leif">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2800&pause=900&color=C77DFF&center=true&vCenter=true&width=640&lines=Hey%2C+I%27m+Lyle;CS+Student+%40+Batangas+State+University;Aspiring+Full-Stack+%26+AI+Engineer;Building+AI+that+works+without+internet;Java+%C2%B7+Python+%C2%B7+C%2B%2B+%C2%B7+JavaScript" alt="typing intro"/>
+  <img src="assets/typing.svg" alt="Hey, I'm Lyle · CS Student @ Batangas State University · Aspiring Full-Stack &amp; AI Engineer · Building AI that works without internet · Java · Python · C++ · JavaScript"/>
 </a>
 
 <br/>
