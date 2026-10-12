@@ -4,6 +4,7 @@ Generates assets/terminal.svg — an animated neon terminal that "types" itself.
 Edit SCRIPT below, then run:  python scripts/build_terminal.py
 No dependencies. Pure SVG + SMIL, so it animates inside GitHub READMEs.
 """
+import random
 from pathlib import Path
 from html import escape
 
@@ -13,12 +14,12 @@ SCRIPT = [
     ("cmd", "whoami"),
     ("out", [("Lyle Daniel", "pink"), ("  //  CS student @ BatStateU · aspiring full-stack & AI engineer", "text")]),
     ("cmd", "ls ~/projects"),
-    ("out", [("OFFGRID/", "cyan"), ("  Cafe-Pabrew/  eMATINO/  SpartaFeast/  Cosmic-Quest/", "text")]),
+    ("out", [("OFFGRID/", "blue"), ("  Cafe-Pabrew/  eMATINO/  SpartaFeast/  Cosmic-Quest/", "text")]),
     ("cmd", "ping internet.com"),
-    ("out", [("✗ request timed out", "pink"), ("  ...  ", "dim"), ("OFFGRID: ", "cyan"),
-             ("still mapping, routing & answering ", "text"), ("✓", "green")]),
+    ("out", [("✗ request timed out", "pink"), ("  ...  ", "dim"), ("OFFGRID: ", "blue"),
+             ("still mapping, routing & answering ", "text"), ("✓", "lav")]),
     ("cmd", "echo $MOTTO"),
-    ("out", [('"Build things that ', "text"), ("still work", "purple"), (' when everything else doesn\'t."', "text")]),
+    ("out", [('"Build things that ', "text"), ("still work", "lav"), (' when everything else doesn\'t."', "text")]),
 ]
 
 # ── Look & feel ───────────────────────────────────────────────────────
@@ -33,12 +34,15 @@ PAUSE_AFTER_CMD = 0.35
 PAUSE_AFTER_OUT = 0.45
 START = 0.9
 
+# Galaxy palette: deep-space black, purples, and a little nebula pink/blue.
 C = {
-    "bg": "#0b0f17", "bar": "#121826", "text": "#c9d1d9", "dim": "#6e7681",
-    "pink": "#ff2e97", "cyan": "#00f0ff", "purple": "#b388ff", "green": "#39ff88",
+    "bg": "#07020f", "bar": "#120a24", "text": "#e6dcf5", "dim": "#8c7aa9",
+    "violet": "#7b2cbf", "purple": "#9d4edd", "lav": "#c77dff", "star": "#e0aaff",
+    "pink": "#ff5ccf", "blue": "#7aa2ff",
 }
+STARS = 42
 
-PROMPT = [(USER, "green"), ("@", "dim"), (HOST, "cyan"), (":", "dim"), ("~", "purple"), ("$ ", "pink")]
+PROMPT = [(USER, "lav"), ("@", "dim"), (HOST, "blue"), (":", "dim"), ("~", "star"), ("$ ", "pink")]
 PROMPT_LEN = sum(len(t) for t, _ in PROMPT)
 
 
@@ -88,18 +92,28 @@ lines_svg.append(
 
 H = y + 34
 
+# Faint twinkling stars behind the text.
+rng = random.Random(3)
+stars = "".join(
+    f'<circle cx="{rng.uniform(14, W - 14):.1f}" cy="{rng.uniform(50, H - 14):.1f}" r="{rng.choice([0.6, 0.8, 1.0, 1.3])}" '
+    f'fill="{rng.choice(["#ffffff", "#ffffff", C["star"], C["lav"], C["blue"]])}" opacity="0.5">'
+    f'<animate attributeName="opacity" values="0.55;0.08;0.55" dur="{rng.uniform(2, 6):.1f}s" '
+    f'begin="{rng.uniform(0, 5):.1f}s" repeatCount="indefinite"/></circle>'
+    for _ in range(STARS)
+)
+
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Animated terminal introducing Lyle Daniel">
   <defs>
     <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="{C["pink"]}"/>
-      <stop offset="0.5" stop-color="#7928ca"/>
-      <stop offset="1" stop-color="{C["cyan"]}"/>
+      <stop offset="0" stop-color="{C["violet"]}"/>
+      <stop offset="0.5" stop-color="{C["lav"]}"/>
+      <stop offset="1" stop-color="{C["pink"]}"/>
       <animateTransform attributeName="gradientTransform" type="rotate" values="0 .5 .5;360 .5 .5" dur="8s" repeatCount="indefinite"/>
     </linearGradient>
     <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="{C["cyan"]}" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="{C["cyan"]}" stop-opacity="0.07"/>
-      <stop offset="1" stop-color="{C["cyan"]}" stop-opacity="0"/>
+      <stop offset="0" stop-color="{C["purple"]}" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="{C["purple"]}" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="{C["purple"]}" stop-opacity="0"/>
     </linearGradient>
     <pattern id="lines" width="4" height="4" patternUnits="userSpaceOnUse">
       <rect width="4" height="1" fill="#ffffff" opacity="0.025"/>
@@ -112,6 +126,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
       <feGaussianBlur stdDeviation="0.6" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
+    <filter id="haze" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="40"/></filter>
     <clipPath id="win"><rect x="6" y="6" width="{W - 12}" height="{H - 12}" rx="14"/></clipPath>
     {"".join(clips)}
   </defs>
@@ -120,6 +135,8 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewB
   <rect x="6" y="6" width="{W - 12}" height="{H - 12}" rx="14" fill="{C["bg"]}"/>
   <g clip-path="url(#win)">
     <rect x="6" y="6" width="{W - 12}" height="38" fill="{C["bar"]}"/>
+    <ellipse cx="{W * 0.78}" cy="{H * 0.7}" rx="260" ry="120" fill="{C["violet"]}" opacity="0.10" filter="url(#haze)"/>
+    {stars}
     <rect width="{W}" height="{H}" fill="url(#lines)"/>
     <rect x="0" y="-120" width="{W}" height="120" fill="url(#scan)">
       <animate attributeName="y" values="-120;{H}" dur="4.5s" repeatCount="indefinite"/>

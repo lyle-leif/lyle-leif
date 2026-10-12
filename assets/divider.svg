@@ -1,29 +1,30 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="24" viewBox="0 0 900 24" role="img" aria-label="divider">
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="28" viewBox="0 0 900 28" role="img" aria-label="divider">
   <defs>
     <linearGradient id="g" x1="0" x2="1">
-      <stop offset="0" stop-color="#ff2e97" stop-opacity="0"/>
-      <stop offset=".2" stop-color="#ff2e97"/>
-      <stop offset=".5" stop-color="#7928ca"/>
-      <stop offset=".8" stop-color="#00f0ff"/>
-      <stop offset="1" stop-color="#00f0ff" stop-opacity="0"/>
+      <stop offset="0" stop-color="#7b2cbf" stop-opacity="0"/>
+      <stop offset=".2" stop-color="#7b2cbf"/>
+      <stop offset=".5" stop-color="#c77dff"/>
+      <stop offset=".8" stop-color="#7aa2ff"/>
+      <stop offset="1" stop-color="#7aa2ff" stop-opacity="0"/>
     </linearGradient>
     <radialGradient id="spark">
       <stop offset="0" stop-color="#ffffff"/>
-      <stop offset=".35" stop-color="#00f0ff" stop-opacity=".9"/>
-      <stop offset="1" stop-color="#00f0ff" stop-opacity="0"/>
+      <stop offset=".35" stop-color="#e0aaff" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#c77dff" stop-opacity="0"/>
     </radialGradient>
     <filter id="glow" x="-10%" y="-200%" width="120%" height="500%">
       <feGaussianBlur stdDeviation="2.5" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
-  <rect x="0" y="11" width="900" height="2" rx="1" fill="url(#g)" filter="url(#glow)"/>
-  <ellipse cx="0" cy="12" rx="40" ry="5" fill="url(#spark)">
-    <animate attributeName="cx" values="-60;960" dur="3.2s" repeatCount="indefinite"/>
+  <rect x="0" y="13" width="900" height="2" rx="1" fill="url(#g)" filter="url(#glow)"/>
+  <ellipse cx="0" cy="14" rx="40" ry="5" fill="url(#spark)">
+    <animate attributeName="cx" values="-60;960" dur="3.6s" repeatCount="indefinite"/>
   </ellipse>
-  <g fill="#ff2e97" filter="url(#glow)">
-    <rect x="444" y="6" width="12" height="12" transform="rotate(45 450 12)">
-      <animate attributeName="fill" values="#ff2e97;#00f0ff;#ff2e97" dur="3.2s" repeatCount="indefinite"/>
-    </rect>
+  <g transform="translate(450 14)" filter="url(#glow)">
+    <path d="M0 -11 Q1.4 -1.4 11 0 Q1.4 1.4 0 11 Q-1.4 1.4 -11 0 Q-1.4 -1.4 0 -11Z" fill="#e0aaff">
+      <animate attributeName="fill" values="#e0aaff;#ff5ccf;#e0aaff" dur="3.6s" repeatCount="indefinite"/>
+      <animateTransform attributeName="transform" type="scale" values="1;0.7;1" dur="2.4s" repeatCount="indefinite"/>
+    </path>
   </g>
 </svg>

@@ -1,17 +1,17 @@
 <!-- ═══════════════════════════════  HEADER  ═══════════════════════════════ -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:ff2e97,50:7928ca,100:00f0ff&height=230&section=header&text=Lyle%20Daniel&fontSize=72&fontColor=ffffff&fontAlignY=36&animation=fadeIn&desc=CS%20Student%20%C2%B7%20Aspiring%20Full-Stack%20and%20AI%20Engineer&descSize=20&descAlignY=58" width="100%" alt="Lyle Daniel — CS Student · Aspiring Full-Stack & AI Engineer"/>
+<img src="assets/header.svg" width="100%" alt="Lyle Daniel — CS Student · Aspiring Full-Stack & AI Engineer"/>
 
 <div align="center">
 
 <a href="https://github.com/lyle-leif">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2800&pause=900&color=00F0FF&center=true&vCenter=true&width=640&lines=Hey%2C+I%27m+Lyle;CS+Student+%40+Batangas+State+University;Aspiring+Full-Stack+%26+AI+Engineer;Building+AI+that+works+without+internet;Java+%C2%B7+Python+%C2%B7+C%2B%2B+%C2%B7+JavaScript" alt="typing intro"/>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2800&pause=900&color=C77DFF&center=true&vCenter=true&width=640&lines=Hey%2C+I%27m+Lyle;CS+Student+%40+Batangas+State+University;Aspiring+Full-Stack+%26+AI+Engineer;Building+AI+that+works+without+internet;Java+%C2%B7+Python+%C2%B7+C%2B%2B+%C2%B7+JavaScript" alt="typing intro"/>
 </a>
 
 <br/>
 
-<img src="https://hits.sh/github.com/lyle-leif.svg?style=for-the-badge&label=PROFILE%20VIEWS&color=ff2e97&labelColor=0b0f17" alt="profile views"/>
-<img src="https://img.shields.io/github/followers/lyle-leif?style=for-the-badge&logo=github&logoColor=white&label=Followers&labelColor=0b0f17&color=7928ca" alt="followers"/>
-<img src="https://img.shields.io/github/stars/lyle-leif?style=for-the-badge&logo=starship&logoColor=white&label=Stars&labelColor=0b0f17&color=00b8c4" alt="stars"/>
+<img src="https://hits.sh/github.com/lyle-leif.svg?style=for-the-badge&label=PROFILE%20VIEWS&color=5a189a&labelColor=07020f" alt="profile views"/>
+<img src="https://img.shields.io/github/followers/lyle-leif?style=for-the-badge&logo=github&logoColor=white&label=Followers&labelColor=07020f&color=7b2cbf" alt="followers"/>
+<img src="https://img.shields.io/github/stars/lyle-leif?style=for-the-badge&logo=starship&logoColor=white&label=Stars&labelColor=07020f&color=9d4edd" alt="stars"/>
 
 </div>
 
@@ -78,16 +78,16 @@ An offline emergency map and AI assistant for all of Batangas, Philippines. It k
 </table>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Python-0b0f17?style=flat-square&logo=python&logoColor=00f0ff" alt="Python"/>
-  <img src="https://img.shields.io/badge/FastAPI-0b0f17?style=flat-square&logo=fastapi&logoColor=00f0ff" alt="FastAPI"/>
-  <img src="https://img.shields.io/badge/Ollama-0b0f17?style=flat-square&logo=ollama&logoColor=00f0ff" alt="Ollama"/>
-  <img src="https://img.shields.io/badge/JavaScript-0b0f17?style=flat-square&logo=javascript&logoColor=00f0ff" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/MapLibre-0b0f17?style=flat-square&logo=maplibre&logoColor=00f0ff" alt="MapLibre"/>
-  <img src="https://img.shields.io/badge/SQLite-0b0f17?style=flat-square&logo=sqlite&logoColor=00f0ff" alt="SQLite"/>
-  <img src="https://img.shields.io/badge/PWA-0b0f17?style=flat-square&logo=pwa&logoColor=00f0ff" alt="PWA"/>
+  <img src="https://img.shields.io/badge/Python-07020f?style=flat-square&logo=python&logoColor=c77dff" alt="Python"/>
+  <img src="https://img.shields.io/badge/FastAPI-07020f?style=flat-square&logo=fastapi&logoColor=c77dff" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/Ollama-07020f?style=flat-square&logo=ollama&logoColor=c77dff" alt="Ollama"/>
+  <img src="https://img.shields.io/badge/JavaScript-07020f?style=flat-square&logo=javascript&logoColor=c77dff" alt="JavaScript"/>
+  <img src="https://img.shields.io/badge/MapLibre-07020f?style=flat-square&logo=maplibre&logoColor=c77dff" alt="MapLibre"/>
+  <img src="https://img.shields.io/badge/SQLite-07020f?style=flat-square&logo=sqlite&logoColor=c77dff" alt="SQLite"/>
+  <img src="https://img.shields.io/badge/PWA-07020f?style=flat-square&logo=pwa&logoColor=c77dff" alt="PWA"/>
   <br/><br/>
-  <a href="https://youtu.be/O5-LdqrzRaw"><img src="https://img.shields.io/badge/▶_Watch_the_showreel-ff2e97?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch the showreel"/></a>
-  <a href="https://github.com/lyle-leif/OFFGRID"><img src="https://img.shields.io/badge/Explore_the_repo-7928ca?style=for-the-badge&logo=github&logoColor=white" alt="Explore the repo"/></a>
+  <a href="https://youtu.be/O5-LdqrzRaw"><img src="https://img.shields.io/badge/▶_Watch_the_showreel-9d4edd?style=for-the-badge&logo=youtube&logoColor=white" alt="Watch the showreel"/></a>
+  <a href="https://github.com/lyle-leif/OFFGRID"><img src="https://img.shields.io/badge/Explore_the_repo-5a189a?style=for-the-badge&logo=github&logoColor=white" alt="Explore the repo"/></a>
 </p>
 
 <img src="assets/divider.svg" width="100%" alt=""/>
@@ -107,11 +107,11 @@ An offline emergency map and AI assistant for all of Batangas, Philippines. It k
 
 **AI & Libraries**
 <br/>
-<img src="https://img.shields.io/badge/Ollama-0b0f17?style=for-the-badge&logo=ollama&logoColor=white" alt="Ollama"/>
-<img src="https://img.shields.io/badge/NumPy-0b0f17?style=for-the-badge&logo=numpy&logoColor=4dabcf" alt="NumPy"/>
-<img src="https://img.shields.io/badge/pandas-0b0f17?style=for-the-badge&logo=pandas&logoColor=e70488" alt="pandas"/>
-<img src="https://img.shields.io/badge/SQLAlchemy-0b0f17?style=for-the-badge&logo=sqlalchemy&logoColor=d71f00" alt="SQLAlchemy"/>
-<img src="https://img.shields.io/badge/MapLibre-0b0f17?style=for-the-badge&logo=maplibre&logoColor=396cb2" alt="MapLibre"/>
+<img src="https://img.shields.io/badge/Ollama-07020f?style=for-the-badge&logo=ollama&logoColor=white" alt="Ollama"/>
+<img src="https://img.shields.io/badge/NumPy-07020f?style=for-the-badge&logo=numpy&logoColor=4dabcf" alt="NumPy"/>
+<img src="https://img.shields.io/badge/pandas-07020f?style=for-the-badge&logo=pandas&logoColor=e70488" alt="pandas"/>
+<img src="https://img.shields.io/badge/SQLAlchemy-07020f?style=for-the-badge&logo=sqlalchemy&logoColor=d71f00" alt="SQLAlchemy"/>
+<img src="https://img.shields.io/badge/MapLibre-07020f?style=for-the-badge&logo=maplibre&logoColor=396cb2" alt="MapLibre"/>
 
 **Tools**
 <br/>
@@ -129,7 +129,7 @@ An offline emergency map and AI assistant for all of Batangas, Philippines. It k
 <img src="profile/stats.svg" height="175" alt="GitHub stats"/>
 <img src="profile/top-langs.svg" height="175" alt="Top languages"/>
 
-<img src="https://streak-stats.demolab.com?user=lyle-leif&hide_border=true&border_radius=14&background=0B0F17&stroke=7928CA&ring=FF2E97&fire=FF2E97&currStreakNum=FFFFFF&currStreakLabel=00F0FF&sideNums=FFFFFF&sideLabels=00F0FF&dates=8B949E" width="62%" alt="GitHub streak"/>
+<img src="profile/streak.svg" width="62%" alt="GitHub streak"/>
 
 </div>
 
@@ -169,13 +169,11 @@ An offline emergency map and AI assistant for all of Batangas, Philippines. It k
 
 <div align="center">
 
-<a href="https://github.com/lyle-leif"><img src="https://img.shields.io/badge/GitHub-0b0f17?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
-<a href="https://youtu.be/O5-LdqrzRaw"><img src="https://img.shields.io/badge/OFFGRID_Showreel-ff0033?style=for-the-badge&logo=youtube&logoColor=white" alt="OFFGRID showreel"/></a>
-<a href="https://lyle-leif.github.io/MATINISTA-/"><img src="https://img.shields.io/badge/eMATINO_Live-7928ca?style=for-the-badge&logo=googlechrome&logoColor=white" alt="eMATINO live site"/></a>
-<!-- Uncomment & fill in the ones you use:
-<a href="https://linkedin.com/in/YOUR_LINKEDIN"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
-<a href="mailto:YOUR_EMAIL"><img src="https://img.shields.io/badge/Email-ff2e97?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
--->
+<a href="https://github.com/lyle-leif"><img src="https://img.shields.io/badge/GitHub-07020f?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/></a>
+<a href="https://www.linkedin.com/in/lyle-daniel-esguerra-85ab3b3b8/"><img src="https://img.shields.io/badge/LinkedIn-7b2cbf?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/></a>
+<a href="mailto:elylesguerra@gmail.com"><img src="https://img.shields.io/badge/Email-ff5ccf?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
+<a href="https://youtu.be/O5-LdqrzRaw"><img src="https://img.shields.io/badge/OFFGRID_Showreel-9d4edd?style=for-the-badge&logo=youtube&logoColor=white" alt="OFFGRID showreel"/></a>
+<a href="https://lyle-leif.github.io/MATINISTA-/"><img src="https://img.shields.io/badge/eMATINO_Live-5a189a?style=for-the-badge&logo=googlechrome&logoColor=white" alt="eMATINO live site"/></a>
 
 <br/><br/>
 
@@ -184,4 +182,4 @@ An offline emergency map and AI assistant for all of Batangas, Philippines. It k
 </div>
 
 <!-- ═══════════════════════════════  FOOTER  ═══════════════════════════════ -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00f0ff,50:7928ca,100:ff2e97&height=130&section=footer&text=thanks%20for%20stopping%20by%20%C2%B7%20stay%20offline-ready&fontSize=22&fontColor=ffffff&fontAlignY=72" width="100%" alt="footer"/>
+<img src="assets/footer.svg" width="100%" alt="thanks for stopping by · stay offline-ready"/>

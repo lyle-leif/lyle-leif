@@ -24,7 +24,7 @@ jobs:
         with:
           fail_on_error: true
           card: stats
-          options: username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&rank_icon=github&hide_border=true&border_radius=14&bg_color=0b0f17&title_color=ff2e97&icon_color=00f0ff&text_color=c9d1d9&ring_color=ff2e97&custom_title=Stats.exe
+          options: username=${{ github.repository_owner }}&show_icons=true&include_all_commits=true&rank_icon=github&hide_border=true&border_radius=14&bg_color=07020f&title_color=e0aaff&icon_color=c77dff&text_color=e6dcf5&ring_color=9d4edd&custom_title=Stats.exe
           path: profile/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -34,8 +34,16 @@ jobs:
         with:
           fail_on_error: true
           card: top-langs
-          options: username=${{ github.repository_owner }}&layout=donut&langs_count=6&hide_border=true&border_radius=14&bg_color=0b0f17&title_color=00f0ff&text_color=c9d1d9&custom_title=Language%20Lab
+          options: username=${{ github.repository_owner }}&layout=donut&langs_count=6&hide_border=true&border_radius=14&bg_color=07020f&title_color=c77dff&text_color=e6dcf5&custom_title=Language%20Lab
           path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Streak card
+        uses: DenverCoder1/github-readme-streak-stats@v1.8.0
+        continue-on-error: true
+        with:
+          options: user=${{ github.repository_owner }}&hide_border=true&border_radius=14&background=07020F&stroke=3C096C&ring=9D4EDD&fire=C77DFF&currStreakNum=FFFFFF&currStreakLabel=E0AAFF&sideNums=FFFFFF&sideLabels=E0AAFF&dates=8C7AA9
+          path: profile/streak.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
       # ── Contribution snake (dark + light) ──
@@ -44,8 +52,8 @@ jobs:
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            profile/snake-dark.svg?palette=github-dark&color_snake=#00f0ff&color_dots=#161b22,#3b1340,#6d1a5c,#b0207a,#ff2e97
-            profile/snake-light.svg?palette=github-light&color_snake=#7928ca&color_dots=#ebedf0,#ffc2e0,#ff85c0,#ff4fa3,#ff2e97
+            profile/snake-dark.svg?palette=github-dark&color_snake=#e0aaff&color_dots=#120a24,#3c096c,#5a189a,#7b2cbf,#c77dff
+            profile/snake-light.svg?palette=github-light&color_snake=#5a189a&color_dots=#ebedf0,#e0c3fc,#c77dff,#9d4edd,#7b2cbf
 
       - name: Commit cards
         run: |
