@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="366" viewBox="0 0 900 366" role="img" aria-label="Animated terminal introducing Lyle Daniel">
+  <defs>
+    <linearGradient id="border" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff2e97"/>
+      <stop offset="0.5" stop-color="#7928ca"/>
+      <stop offset="1" stop-color="#00f0ff"/>
+      <animateTransform attributeName="gradientTransform" type="rotate" values="0 .5 .5;360 .5 .5" dur="8s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="scan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00f0ff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#00f0ff" stop-opacity="0.07"/>
+      <stop offset="1" stop-color="#00f0ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="lines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1" fill="#ffffff" opacity="0.025"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="0.6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <clipPath id="win"><rect x="6" y="6" width="888" height="354" rx="14"/></clipPath>
+    <clipPath id="c0"><rect x="194.90" y="65" height="31" width="0"><animate attributeName="width" values="0.00;9.05;18.10;27.15;36.20;45.25;54.30;94.30" calcMode="discrete" begin="0.90s" dur="0.33s" fill="freeze"/></rect></clipPath><clipPath id="c2"><rect x="194.90" y="127" height="31" width="0"><animate attributeName="width" values="0.00;9.05;18.10;27.15;36.20;45.25;54.30;63.35;72.40;81.45;90.50;99.55;108.60;117.65;157.65" calcMode="discrete" begin="2.03s" dur="0.71s" fill="freeze"/></rect></clipPath><clipPath id="c4"><rect x="194.90" y="189" height="31" width="0"><animate attributeName="width" values="0.00;9.05;18.10;27.15;36.20;45.25;54.30;63.35;72.40;81.45;90.50;99.55;108.60;117.65;126.70;135.75;144.80;153.85;193.85" calcMode="discrete" begin="3.55s" dur="0.94s" fill="freeze"/></rect></clipPath><clipPath id="c6"><rect x="194.90" y="251" height="31" width="0"><animate attributeName="width" values="0.00;9.05;18.10;27.15;36.20;45.25;54.30;63.35;72.40;81.45;90.50;99.55;139.55" calcMode="discrete" begin="5.28s" dur="0.60s" fill="freeze"/></rect></clipPath>
+  </defs>
+
+  <!-- window -->
+  <rect x="6" y="6" width="888" height="354" rx="14" fill="#0b0f17"/>
+  <g clip-path="url(#win)">
+    <rect x="6" y="6" width="888" height="38" fill="#121826"/>
+    <rect width="900" height="366" fill="url(#lines)"/>
+    <rect x="0" y="-120" width="900" height="120" fill="url(#scan)">
+      <animate attributeName="y" values="-120;366" dur="4.5s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  <rect x="6" y="6" width="888" height="354" rx="14" fill="none" stroke="url(#border)" stroke-width="2" filter="url(#glow)"/>
+
+  <!-- title bar -->
+  <circle cx="30" cy="25" r="6" fill="#ff5f57"/>
+  <circle cx="50" cy="25" r="6" fill="#febc2e"/>
+  <circle cx="70" cy="25" r="6" fill="#28c840"/>
+  <text x="450.0" y="30" text-anchor="middle" fill="#6e7681" font-family="'Fira Code','JetBrains Mono',Consolas,Menlo,monospace" font-size="13">lyle@lyle-leif: ~ — zsh</text>
+
+  <!-- content -->
+  <g font-family="'Fira Code','JetBrains Mono','Cascadia Code',Consolas,Menlo,monospace" font-size="15" xml:space="preserve" filter="url(#soft)">
+    <g opacity="0"><set attributeName="opacity" to="1" begin="0.90s" fill="freeze"/><text x="32" y="84"><tspan fill="#39ff88">lyle</tspan><tspan fill="#6e7681">@</tspan><tspan fill="#00f0ff">lyle-leif</tspan><tspan fill="#6e7681">:</tspan><tspan fill="#b388ff">~</tspan><tspan fill="#ff2e97">$ </tspan></text><text x="194.90" y="84" fill="#c9d1d9" clip-path="url(#c0)">whoami</text></g><g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="1.58s" dur="0.25s" fill="freeze"/><animateTransform attributeName="transform" type="translate" from="-8 0" to="0 0" begin="1.58s" dur="0.25s" fill="freeze"/><text x="32" y="115"><tspan fill="#ff2e97">→ </tspan><tspan fill="#ff2e97">Lyle Daniel</tspan><tspan fill="#c9d1d9">  //  CS student @ BatStateU · aspiring full-stack &amp; AI engineer</tspan></text></g><g opacity="0"><set attributeName="opacity" to="1" begin="2.03s" fill="freeze"/><text x="32" y="146"><tspan fill="#39ff88">lyle</tspan><tspan fill="#6e7681">@</tspan><tspan fill="#00f0ff">lyle-leif</tspan><tspan fill="#6e7681">:</tspan><tspan fill="#b388ff">~</tspan><tspan fill="#ff2e97">$ </tspan></text><text x="194.90" y="146" fill="#c9d1d9" clip-path="url(#c2)">ls ~/projects</text></g><g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="3.10s" dur="0.25s" fill="freeze"/><animateTransform attributeName="transform" type="translate" from="-8 0" to="0 0" begin="3.10s" dur="0.25s" fill="freeze"/><text x="32" y="177"><tspan fill="#ff2e97">→ </tspan><tspan fill="#00f0ff">OFFGRID/</tspan><tspan fill="#c9d1d9">  Cafe-Pabrew/  eMATINO/  SpartaFeast/  Cosmic-Quest/</tspan></text></g><g opacity="0"><set attributeName="opacity" to="1" begin="3.55s" fill="freeze"/><text x="32" y="208"><tspan fill="#39ff88">lyle</tspan><tspan fill="#6e7681">@</tspan><tspan fill="#00f0ff">lyle-leif</tspan><tspan fill="#6e7681">:</tspan><tspan fill="#b388ff">~</tspan><tspan fill="#ff2e97">$ </tspan></text><text x="194.90" y="208" fill="#c9d1d9" clip-path="url(#c4)">ping internet.com</text></g><g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="4.83s" dur="0.25s" fill="freeze"/><animateTransform attributeName="transform" type="translate" from="-8 0" to="0 0" begin="4.83s" dur="0.25s" fill="freeze"/><text x="32" y="239"><tspan fill="#ff2e97">→ </tspan><tspan fill="#ff2e97">✗ request timed out</tspan><tspan fill="#6e7681">  ...  </tspan><tspan fill="#00f0ff">OFFGRID: </tspan><tspan fill="#c9d1d9">still mapping, routing &amp; answering </tspan><tspan fill="#39ff88">✓</tspan></text></g><g opacity="0"><set attributeName="opacity" to="1" begin="5.28s" fill="freeze"/><text x="32" y="270"><tspan fill="#39ff88">lyle</tspan><tspan fill="#6e7681">@</tspan><tspan fill="#00f0ff">lyle-leif</tspan><tspan fill="#6e7681">:</tspan><tspan fill="#b388ff">~</tspan><tspan fill="#ff2e97">$ </tspan></text><text x="194.90" y="270" fill="#c9d1d9" clip-path="url(#c6)">echo $MOTTO</text></g><g opacity="0"><animate attributeName="opacity" from="0" to="1" begin="6.24s" dur="0.25s" fill="freeze"/><animateTransform attributeName="transform" type="translate" from="-8 0" to="0 0" begin="6.24s" dur="0.25s" fill="freeze"/><text x="32" y="301"><tspan fill="#ff2e97">→ </tspan><tspan fill="#c9d1d9">&quot;Build things that </tspan><tspan fill="#b388ff">still work</tspan><tspan fill="#c9d1d9"> when everything else doesn&#x27;t.&quot;</tspan></text></g><g opacity="0"><set attributeName="opacity" to="1" begin="6.69s" fill="freeze"/><text x="32" y="332"><tspan fill="#39ff88">lyle</tspan><tspan fill="#6e7681">@</tspan><tspan fill="#00f0ff">lyle-leif</tspan><tspan fill="#6e7681">:</tspan><tspan fill="#b388ff">~</tspan><tspan fill="#ff2e97">$ </tspan></text><rect x="194.90" y="318" width="9.05" height="18" fill="#ff2e97" filter="url(#glow)"><animate attributeName="opacity" values="1;1;0;0" keyTimes="0;0.5;0.5;1" dur="1s" repeatCount="indefinite"/></rect></g>
+  </g>
+</svg>
