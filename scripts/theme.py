@@ -123,15 +123,30 @@ def chapter(x, y, number, title):
             f'letter-spacing="7" fill="{PAPER}">{esc(title)}</text>')
 
 
+def low_sun(uid, cx, cy, r, opacity=.6):
+    """A small setting sun with a soft halo, for the corner of a card."""
+    return (f'\n  <circle cx="{cx}" cy="{cy}" r="{f(r * 2.2)}" fill="url(#{uid}halo)" opacity="{opacity}"/>'
+            f'\n  <circle cx="{cx}" cy="{cy}" r="{r}" fill="url(#{uid}sun)" opacity="{opacity}"/>')
+
+
+def rule(x, y, width):
+    """Red brush stroke that fades into a thin line, as under the hero's name."""
+    return (f'\n  <path d="M{x},{y} H{x + 120}" stroke="{RED}" stroke-width="2.4"/>'
+            f'\n  <path d="M{x + 128},{y} l5,-5 l5,5 l-5,5 Z" fill="{RED}"/>'
+            f'\n  <path d="M{x + 146},{y} H{x + width}" stroke="{PAPER}" stroke-opacity=".12" stroke-width="1"/>')
+
+
 def card(w, h, uid, body, label):
-    """Rounded dark panel with a faint warm glow, matching the hero's frame."""
+    """Rounded dark panel with a faint warm edge, matching the hero's frame. uid prefixes the gradient ids."""
     return (f'<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="{h}" viewBox="0 0 {w} {h}" '
             f'role="img" aria-label="{esc(label)}">'
             f'\n  <defs>'
             f'\n    <linearGradient id="{uid}bg" x1="0" y1="0" x2="0" y2="1">'
             f'<stop offset="0" stop-color="#0a0b0e"/><stop offset="1" stop-color="#16141a"/></linearGradient>'
-            f'\n    <radialGradient id="{uid}vg" cx=".5" cy=".5" r=".75">'
-            f'<stop offset=".6" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".5"/></radialGradient>'
+            f'\n    <radialGradient id="{uid}sun" cx=".5" cy=".62" r=".6" fx=".5" fy=".78">'
+            f'<stop offset="0" stop-color="#ff5a2e"/><stop offset=".55" stop-color="#ff2a1a"/><stop offset="1" stop-color="#d9140b"/></radialGradient>'
+            f'\n    <radialGradient id="{uid}halo"><stop offset=".45" stop-color="#ff2a18" stop-opacity=".4"/>'
+            f'<stop offset="1" stop-color="#a00c06" stop-opacity="0"/></radialGradient>'
             f'\n    <clipPath id="{uid}clip"><rect width="{w}" height="{h}" rx="14"/></clipPath>'
             f'\n  </defs>'
             f'\n  <g clip-path="url(#{uid}clip)">'
