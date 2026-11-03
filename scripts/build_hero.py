@@ -13,7 +13,6 @@ from theme import ASSETS, EMBER, INK, MONO, PAPER, RED, SERIF, embers, f, grass,
 NAME = "LYLE DANIEL"
 ROLE = "Aspiring Full-Stack & AI Engineer"
 SUB = "CS STUDENT  ·  BATANGAS STATE UNIVERSITY"
-SEAL = "LD"
 
 W, H = 1200, 420
 SUN = (885, 200, 172)            # cx, cy, r
@@ -321,11 +320,6 @@ def title():
     x = 72
     return f"""
   <g>
-    <g transform="translate({x},86)">
-      <rect width="40" height="40" rx="3" fill="{RED}" opacity=".92"/>
-      <rect x="3" y="3" width="34" height="34" rx="2" fill="none" stroke="#0b0b0d" stroke-opacity=".55" stroke-width="1.2"/>
-      <text x="20" y="27.5" text-anchor="middle" font-family="{SERIF}" font-size="20" font-weight="700" fill="#0b0b0d">{SEAL}</text>
-    </g>
     <text x="{x}" y="206" font-family="{SERIF}" font-size="66" font-weight="600" letter-spacing="9" fill="{PAPER}">{NAME}</text>
     <path d="M{x},232 H{x + 132}" stroke="{RED}" stroke-width="2.4"/>
     <path d="M{x + 140},232 l5,-5 l5,5 l-5,5 Z" fill="{RED}"/>
