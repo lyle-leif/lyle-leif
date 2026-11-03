@@ -18,8 +18,10 @@ HILL = ((200, 430), (700, 330), (1200, 212))   # quadratic bezier: start, contro
 RONIN_X = 838
 
 BLADES = 300
-EMBERS = 60
-SHARDS = 22
+EMBERS = 90
+SHARDS = 30
+LEAVES = 14
+STREAKS = 6
 
 INK = "#08080a"
 PAPER = "#ece6dc"
@@ -66,7 +68,7 @@ def backdrop():
   <rect width="{W}" height="{H}" fill="url(#sky)"/>
   <ellipse cx="{cx}" cy="{cy + 40}" rx="520" ry="260" fill="url(#haze)"/>
   <circle cx="{cx}" cy="{cy}" r="{r * 1.75:.0f}" fill="url(#halo)">
-    <animate attributeName="opacity" values=".75;1;.75" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values=".6;1;.6" dur="5s" repeatCount="indefinite"/>
   </circle>
   <circle cx="{cx}" cy="{cy}" r="{r}" fill="url(#sun)"/>
   <path d="M-20,{H} L-20,388 Q260,350 560,372 T{W + 20},338 L{W + 20},{H} Z" fill="#100e12"/>
@@ -103,13 +105,13 @@ def grass(front=False):
     for key, blades in sorted(clusters.items()):
         bx = key * 70 + 35
         by = hill_y(min(max(bx, HILL[0][0]), W))
-        dur = rng.uniform(2.8, 4.6)
-        amp = rng.uniform(5, 10)
+        dur = rng.uniform(1.8, 3.2)
+        amp = rng.uniform(10, 18)
         out.append(
             f'<g transform="translate({bx},{f(by)})"><g>'
             f'<animateTransform attributeName="transform" type="skewX" '
-            f'values="0;{f(amp)};{f(amp * .3)};{f(amp * 1.2)};0" keyTimes="0;.3;.5;.8;1" calcMode="spline" '
-            f'keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1;.45 0 .55 1" '
+            f'values="0;{f(amp)};{f(amp * .3)};{f(amp * 1.6)};{f(amp * .5)};0" keyTimes="0;.25;.45;.7;.85;1" calcMode="spline" '
+            f'keySplines="{";".join([".45 0 .55 1"] * 5)}" '
             f'dur="{dur:.1f}s" begin="-{rng.uniform(0, dur):.1f}s" repeatCount="indefinite"/>'
             f'<g transform="translate({-bx},{f(-by)})">{"".join(blades)}</g></g></g>')
     return f'\n  <g fill="{INK}">' + "\n    ".join([""] + out) + "\n  </g>"
@@ -118,12 +120,12 @@ def grass(front=False):
 # ── the ronin ──────────────────────────────────────────────────────────────
 CLOAK = [   # same command structure in every frame so SMIL can morph between them
     "M-13,-124 C-28,-116 -42,-106 -60,-103 L-49,-94 C-57,-86 -64,-80 -74,-77 C-57,-67 -42,-59 -24,-57 L-19,-88 Z",
-    "M-13,-124 C-30,-120 -46,-114 -68,-114 L-55,-101 C-63,-94 -72,-90 -84,-88 C-62,-74 -45,-63 -25,-58 L-19,-88 Z",
+    "M-13,-124 C-32,-124 -50,-120 -76,-122 L-60,-106 C-70,-100 -80,-98 -94,-98 C-66,-78 -45,-63 -25,-58 L-19,-88 Z",
     "M-13,-124 C-27,-114 -40,-102 -56,-96 L-46,-89 C-53,-80 -60,-73 -68,-68 C-54,-62 -40,-57 -23,-56 L-19,-88 Z",
 ]
 TAIL = [
     "M-4,-133 Q-22,-128 -40,-136 Q-50,-140 -60,-134",
-    "M-4,-133 Q-24,-134 -42,-146 Q-52,-150 -64,-148",
+    "M-4,-133 Q-26,-138 -44,-152 Q-56,-158 -70,-156",
     "M-4,-133 Q-20,-124 -38,-128 Q-48,-130 -56,-122",
 ]
 
@@ -135,8 +137,8 @@ def ronin():
     tail = ";".join(TAIL + TAIL[:1])
     return f"""
   <g transform="translate({x},{f(y)}) scale(1.08)" fill="{INK}">
-    <path d="{CLOAK[0]}"><animate attributeName="d" values="{cloak}" dur="2.6s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/></path>
-    <path d="{TAIL[0]}" fill="none" stroke="{INK}" stroke-width="2.2" stroke-linecap="round"><animate attributeName="d" values="{tail}" dur="1.9s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/></path>
+    <path d="{CLOAK[0]}"><animate attributeName="d" values="{cloak}" dur="1.4s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/></path>
+    <path d="{TAIL[0]}" fill="none" stroke="{INK}" stroke-width="2.2" stroke-linecap="round"><animate attributeName="d" values="{tail}" dur="1.1s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"/></path>
     <path d="M-14,-129 C-22,-118 -22,-100 -19,-86 L-27,-22 L-23,0 L-7,0 L0,-32 L8,0 L27,0 L31,-18 L22,-86 C25,-101 23,-121 16,-129 Z"/>
     <rect x="-6" y="-138" width="13" height="12" rx="3"/>
     <path d="M-38,-134 L3,-163 L42,-134 Q3,-128 -38,-134 Z"/>
@@ -156,16 +158,22 @@ def embers(n, front):
         dx, dy = -rng.uniform(450, 1000), -rng.uniform(30, 220)
         c1 = (dx * .3, dy * .2 + rng.uniform(-40, 40))
         c2 = (dx * .7, dy * .8 + rng.uniform(-40, 40))
-        dur = rng.uniform(7, 14)
+        dur = rng.uniform(4, 9)
         begin = -rng.uniform(0, dur)
-        r = rng.uniform(1.1, 2.8) if front else rng.uniform(.7, 1.6)
-        peak = rng.uniform(.7, 1) if front else rng.uniform(.35, .65)
+        r = rng.uniform(1.6, 4) if front else rng.uniform(1, 2)
+        peak = rng.uniform(.75, 1) if front else rng.uniform(.4, .7)
+        colour = rng.choice(EMBER)
+        glow = (f'<circle r="{r * 2.4:.1f}" fill="{RED}" opacity=".18"/>'   # halo only on the big ones
+                if front and r > 3 else "")
         out.append(
-            f'<circle cx="{f(x)}" cy="{f(y)}" r="{r:.1f}" fill="{rng.choice(EMBER)}" opacity="0">'
+            f'<g transform="translate({f(x)},{f(y)})"><g opacity="0">'
             f'<animateMotion path="M0,0 C{f(c1[0])},{f(c1[1])} {f(c2[0])},{f(c2[1])} {f(dx)},{f(dy)}" '
             f'dur="{dur:.1f}s" begin="{begin:.1f}s" repeatCount="indefinite"/>'
             f'<animate attributeName="opacity" values="0;{peak:.2f};{peak * .8:.2f};0" keyTimes="0;.12;.7;1" '
-            f'dur="{dur:.1f}s" begin="{begin:.1f}s" repeatCount="indefinite"/></circle>')
+            f'dur="{dur:.1f}s" begin="{begin:.1f}s" repeatCount="indefinite"/>'
+            f'{glow}<circle r="{r:.1f}" fill="{colour}">'
+            f'<animate attributeName="opacity" values="1;.45;1;.7;1" dur="{rng.uniform(.5, 1.1):.2f}s" repeatCount="indefinite"/>'
+            f'</circle></g></g>')
     return "\n  <g>" + "\n    ".join([""] + out) + "\n  </g>"
 
 
@@ -183,6 +191,46 @@ def shards():
             f'dur="{dur:.1f}s" begin="-{rng.uniform(0, dur):.1f}s" repeatCount="indefinite"/>'
             f'<animate attributeName="opacity" values="0;.95;.9;0" keyTimes="0;.1;.75;1" '
             f'dur="{dur:.1f}s" begin="-{rng.uniform(0, dur):.1f}s" repeatCount="indefinite"/></path>')
+    return "\n  <g>" + "\n    ".join([""] + out) + "\n  </g>"
+
+
+
+def leaves():
+    """Red leaves tumbling on the wind."""
+    out = []
+    for _ in range(LEAVES):
+        x = rng.uniform(700, W + 40)
+        y = hill_y(min(x, W)) - rng.uniform(0, 160)
+        dx, dy = -rng.uniform(600, 1150), -rng.uniform(-20, 200)
+        dur = rng.uniform(5, 9)
+        begin = -rng.uniform(0, dur)
+        s = rng.uniform(.8, 1.4)
+        spin = rng.uniform(.8, 1.8)
+        out.append(
+            f'<g opacity="0">'
+            f'<animateMotion path="M{f(x)},{f(y)} c{f(dx * .3)},{f(rng.uniform(-60, 40))} {f(dx * .6)},{f(dy * .5 + rng.uniform(-50, 50))} {f(dx)},{f(dy)}" '
+            f'dur="{dur:.1f}s" begin="{begin:.1f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="opacity" values="0;.95;.85;0" keyTimes="0;.1;.8;1" dur="{dur:.1f}s" begin="{begin:.1f}s" repeatCount="indefinite"/>'
+            f'<g><animateTransform attributeName="transform" type="rotate" values="0;360" dur="{spin:.1f}s" repeatCount="indefinite"/>'
+            f'<path d="M{f(-5 * s)},0 C{f(-2 * s)},{f(-3.5 * s)} {f(3 * s)},{f(-3.5 * s)} {f(6 * s)},0 C{f(3 * s)},{f(3 * s)} {f(-2 * s)},{f(3 * s)} {f(-5 * s)},0Z" '
+            f'fill="{rng.choice(EMBER[:3])}"/></g></g>')
+    return "\n  <g>" + "\n    ".join([""] + out) + "\n  </g>"
+
+
+def streaks():
+    """Faint wind lines that whip across the sky every few seconds."""
+    out = []
+    for _ in range(STREAKS):
+        x = rng.uniform(700, 1150)
+        y = rng.uniform(40, 260)
+        length = rng.uniform(90, 200)
+        dur = rng.uniform(4, 7)
+        begin = -rng.uniform(0, dur)
+        out.append(
+            f'<path d="M0,0 h{f(length)}" stroke="{PAPER}" stroke-width="1" stroke-linecap="round" opacity="0">'
+            f'<animateMotion path="M{f(x)},{f(y)} q-250,-14 -560,6" keyPoints="0;1;1" keyTimes="0;.3;1" calcMode="linear" '
+            f'dur="{dur:.1f}s" begin="{begin:.1f}s" repeatCount="indefinite"/>'
+            f'<animate attributeName="opacity" values="0;.22;0;0" keyTimes="0;.12;.3;1" dur="{dur:.1f}s" begin="{begin:.1f}s" repeatCount="indefinite"/></path>')
     return "\n  <g>" + "\n    ".join([""] + out) + "\n  </g>"
 
 
@@ -233,11 +281,13 @@ def defs():
 def hero():
     body = "".join([
         backdrop(),
+        streaks(),
         embers(EMBERS // 3, front=False),
         grass(),
         ronin(),
         grass(front=True),
         shards(),
+        leaves(),
         embers(EMBERS - EMBERS // 3, front=True),
         f'\n  <rect width="{W}" height="{H}" fill="url(#vignette)"/>',
         title(),
